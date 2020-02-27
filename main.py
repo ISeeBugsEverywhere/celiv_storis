@@ -66,6 +66,9 @@ class mainUi(QMainWindow):
             print("ERROR")
             print(k)
             print(k.args)
+            win = QMessageBox()
+            win.setText("Error with config")
+            win.exec()
         pass
 
 
