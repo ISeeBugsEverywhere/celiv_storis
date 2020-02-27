@@ -4,6 +4,7 @@ from GUI.UI import Ui_MainWindow
 import configparser
 
 cpath="Config/cfg.ini"
+section="PARAMS"
 
 class mainUi(QMainWindow):
     def __init__(self):
@@ -19,7 +20,6 @@ class mainUi(QMainWindow):
     def load_config(self):
         cp = configparser.ConfigParser()
         cp.read(cpath)
-        section="PARAMS"
         s = cp[section]["s"]
         sb = cp[section]["sb"]
         epsilon = cp[section]["epsilon"]
@@ -45,6 +45,27 @@ class mainUi(QMainWindow):
         pass
 
     def save_config(self):
+        try:
+            cp = configparser.ConfigParser()
+            cp.read(cpath)
+            section='PARAMS'
+            cp[section]["s"] = str(self.ui.sBox.value())
+            cp[section]["sb"] = str(self.ui.sCombo.currentIndex())
+            cp[section]["epsilon"] = str(self.ui.epsilonBox.value())
+            cp[section]["r"] = str(self.ui.rBox.value())
+            cp[section]["rb"] = str(self.ui.rCombo.currentIndex())
+            cp[section]["u"] = str(self.ui.uBox.value())
+            cp[section]["ub"] = str(self.ui.uCombo.currentIndex())
+            cp[section]["u0"] = str(self.ui.u0Box.value())
+            cp[section]["u0b"] = str(self.ui.u0Combo.currentIndex())
+            cp[section]["timp"] = str(self.ui.timpBox.value())
+            cp[section]["timpb"] = str(self.ui.timpCombo.currentIndex())
+            with open(cpath, 'w') as cfg:
+                cp.write(cfg)
+        except KeyError as k:
+            print("ERROR")
+            print(k)
+            print(k.args)
         pass
 
 
@@ -55,6 +76,7 @@ class mainUi(QMainWindow):
         """
         txt = "D in μm"
         self.ui.answer_label.setText(txt)
+        self.save_config()
         pass
 
     def exit_fn(self):
