@@ -16,6 +16,7 @@ class mainUi(QMainWindow):
         self.ui.exit_btn.clicked.connect(self.exit_fn)
         self.ui.calculate_btn.clicked.connect(self.calculate_fn)
         self.load_config()
+        self.epsilon0 = 1;
 
     def load_config(self):
         cp = configparser.ConfigParser()
@@ -31,6 +32,7 @@ class mainUi(QMainWindow):
         u0b = cp[section]["u0b"]
         timp = cp[section]["timp"]
         timpb = cp[section]["timpb"]
+        self.epsilon0 = float(cp[section]["epsilon0"])
         self.ui.sBox.setValue(float(s))
         self.ui.sCombo.setCurrentIndex(int(sb))
         self.ui.epsilonBox.setValue(float(epsilon))
@@ -77,10 +79,52 @@ class mainUi(QMainWindow):
         calculates d, in μmeters
         :return:
         """
-        txt = "D in μm"
+        s_p, r_p , u_p, u0_p, t_p = self.get_powers()
+        print(s_p, r_p , u_p, u0_p, t_p)
+        s = self.ui.sBox.value()
+        e = self.ui.epsilonBox.value()
+        r = self.ui.rBox.value()
+        u0 = self.ui.u0Box.value()
+        u = self.ui.uBox.value()
+        t = self.ui.timpBox.value()
+        d = (u*u_p)/(t*t_p)*(r*r_p * e*self.epsilon0 * s * s_p)/(u0 * u0_p)
+        print("D", d)
+        txt = "D in μm : "+str(d)
         self.ui.answer_label.setText(txt)
         self.save_config()
         pass
+
+    def get_powers(self):
+        """
+
+        :return: s, r, u, u0, t power factors
+        """
+        s_idx = self.ui.sCombo.currentIndex()
+        s_pow = {
+            0 : 1e-6,
+            1 : 1e-4
+        }
+        r_idx = self.ui.rCombo.currentIndex()
+        r_pow = {
+            0 : 1,
+            1 : 1000,
+            2 : 1e6
+        }
+        u_idx = self.ui.uCombo.currentIndex()
+        u0_idx = self.ui.u0Combo.currentIndex()
+        u_pow = {
+            0 : 1e-3,
+            1 : 1
+        }
+        t_idx = self.ui.timpCombo.currentIndex()
+        t_pow = {
+            0 : 1e-9,
+            1 : 1e-6,
+            2 : 1e-3,
+            3 : 1
+        }
+        return s_pow.get(s_idx), r_pow.get(r_idx), u_pow.get(u_idx), u_pow.get(u0_idx), t_pow.get(t_idx)
+
 
     def exit_fn(self):
         print("exiting...")
