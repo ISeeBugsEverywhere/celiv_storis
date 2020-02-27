@@ -42,6 +42,9 @@
         <height>16777215</height>
        </size>
       </property>
+      <property name="locale">
+       <locale language="C" country="AnyCountry"/>
+      </property>
      </widget>
     </item>
     <item row="0" column="2" colspan="2">
@@ -79,6 +82,9 @@
         <height>16777215</height>
        </size>
       </property>
+      <property name="locale">
+       <locale language="C" country="AnyCountry"/>
+      </property>
      </widget>
     </item>
     <item row="2" column="0">
@@ -95,6 +101,9 @@
         <width>80</width>
         <height>16777215</height>
        </size>
+      </property>
+      <property name="locale">
+       <locale language="C" country="AnyCountry"/>
       </property>
      </widget>
     </item>
@@ -138,6 +147,9 @@
         <height>16777215</height>
        </size>
       </property>
+      <property name="locale">
+       <locale language="C" country="AnyCountry"/>
+      </property>
      </widget>
     </item>
     <item row="3" column="2" colspan="2">
@@ -174,6 +186,9 @@
         <width>80</width>
         <height>16777215</height>
        </size>
+      </property>
+      <property name="locale">
+       <locale language="C" country="AnyCountry"/>
       </property>
      </widget>
     </item>
@@ -217,6 +232,9 @@
         <width>80</width>
         <height>16777215</height>
        </size>
+      </property>
+      <property name="locale">
+       <locale language="C" country="AnyCountry"/>
       </property>
      </widget>
     </item>
@@ -308,7 +326,7 @@
      <x>0</x>
      <y>0</y>
      <width>380</width>
-     <height>31</height>
+     <height>28</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFailas">
@@ -321,7 +339,7 @@
   </widget>
   <action name="exit_action">
    <property name="text">
-    <string>Uždaryti</string>
+    <string>&amp;Uždaryti</string>
    </property>
   </action>
  </widget>

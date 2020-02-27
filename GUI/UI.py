@@ -2,11 +2,13 @@
 
 # Form implementation generated from reading ui file 'UI.ui'
 #
-# Created by: PyQt5 UI code generator 5.10.1
+# Created by: PyQt5 UI code generator 5.14.1
 #
 # WARNING! All changes made in this file will be lost!
 
+
 from PyQt5 import QtCore, QtGui, QtWidgets
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -27,6 +29,7 @@ class Ui_MainWindow(object):
         self.gridLayout.addWidget(self.label, 0, 0, 1, 1)
         self.sBox = QtWidgets.QDoubleSpinBox(self.centralwidget)
         self.sBox.setMaximumSize(QtCore.QSize(80, 16777215))
+        self.sBox.setLocale(QtCore.QLocale(QtCore.QLocale.C, QtCore.QLocale.AnyCountry))
         self.sBox.setObjectName("sBox")
         self.gridLayout.addWidget(self.sBox, 0, 1, 1, 1)
         self.sCombo = QtWidgets.QComboBox(self.centralwidget)
@@ -40,6 +43,7 @@ class Ui_MainWindow(object):
         self.gridLayout.addWidget(self.label_2, 1, 0, 1, 1)
         self.epsilonBox = QtWidgets.QDoubleSpinBox(self.centralwidget)
         self.epsilonBox.setMaximumSize(QtCore.QSize(80, 16777215))
+        self.epsilonBox.setLocale(QtCore.QLocale(QtCore.QLocale.C, QtCore.QLocale.AnyCountry))
         self.epsilonBox.setObjectName("epsilonBox")
         self.gridLayout.addWidget(self.epsilonBox, 1, 1, 1, 1)
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
@@ -47,6 +51,7 @@ class Ui_MainWindow(object):
         self.gridLayout.addWidget(self.label_3, 2, 0, 1, 1)
         self.rBox = QtWidgets.QDoubleSpinBox(self.centralwidget)
         self.rBox.setMaximumSize(QtCore.QSize(80, 16777215))
+        self.rBox.setLocale(QtCore.QLocale(QtCore.QLocale.C, QtCore.QLocale.AnyCountry))
         self.rBox.setObjectName("rBox")
         self.gridLayout.addWidget(self.rBox, 2, 1, 1, 1)
         self.rCombo = QtWidgets.QComboBox(self.centralwidget)
@@ -61,6 +66,7 @@ class Ui_MainWindow(object):
         self.gridLayout.addWidget(self.label_4, 3, 0, 1, 1)
         self.uBox = QtWidgets.QDoubleSpinBox(self.centralwidget)
         self.uBox.setMaximumSize(QtCore.QSize(80, 16777215))
+        self.uBox.setLocale(QtCore.QLocale(QtCore.QLocale.C, QtCore.QLocale.AnyCountry))
         self.uBox.setObjectName("uBox")
         self.gridLayout.addWidget(self.uBox, 3, 1, 1, 1)
         self.uCombo = QtWidgets.QComboBox(self.centralwidget)
@@ -74,6 +80,7 @@ class Ui_MainWindow(object):
         self.gridLayout.addWidget(self.label_5, 4, 0, 1, 1)
         self.u0Box = QtWidgets.QDoubleSpinBox(self.centralwidget)
         self.u0Box.setMaximumSize(QtCore.QSize(80, 16777215))
+        self.u0Box.setLocale(QtCore.QLocale(QtCore.QLocale.C, QtCore.QLocale.AnyCountry))
         self.u0Box.setObjectName("u0Box")
         self.gridLayout.addWidget(self.u0Box, 4, 1, 1, 1)
         self.u0Combo = QtWidgets.QComboBox(self.centralwidget)
@@ -88,6 +95,7 @@ class Ui_MainWindow(object):
         self.timpBox = QtWidgets.QDoubleSpinBox(self.centralwidget)
         self.timpBox.setMinimumSize(QtCore.QSize(80, 0))
         self.timpBox.setMaximumSize(QtCore.QSize(80, 16777215))
+        self.timpBox.setLocale(QtCore.QLocale(QtCore.QLocale.C, QtCore.QLocale.AnyCountry))
         self.timpBox.setObjectName("timpBox")
         self.gridLayout.addWidget(self.timpBox, 5, 1, 1, 1)
         self.timpCombo = QtWidgets.QComboBox(self.centralwidget)
@@ -122,7 +130,7 @@ class Ui_MainWindow(object):
         self.gridLayout.addWidget(self.answer_label, 8, 0, 1, 4)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 380, 31))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 380, 28))
         self.menubar.setObjectName("menubar")
         self.menuFailas = QtWidgets.QMenu(self.menubar)
         self.menuFailas.setObjectName("menuFailas")
@@ -162,5 +170,4 @@ class Ui_MainWindow(object):
         self.calculate_btn.setText(_translate("MainWindow", "Skaičiuoti"))
         self.answer_label.setText(_translate("MainWindow", "????"))
         self.menuFailas.setTitle(_translate("MainWindow", "Fai&las"))
-        self.exit_action.setText(_translate("MainWindow", "Uždaryti"))
-
+        self.exit_action.setText(_translate("MainWindow", "&Uždaryti"))

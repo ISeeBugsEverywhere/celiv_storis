@@ -15,8 +15,9 @@ class mainUi(QMainWindow):
         self.ui.exit_action.triggered.connect(self.exit_fn)
         self.ui.exit_btn.clicked.connect(self.exit_fn)
         self.ui.calculate_btn.clicked.connect(self.calculate_fn)
+        self.epsilon0 = 1
         self.load_config()
-        self.epsilon0 = 1;
+
 
     def load_config(self):
         cp = configparser.ConfigParser()
@@ -80,7 +81,7 @@ class mainUi(QMainWindow):
         :return:
         """
         s_p, r_p , u_p, u0_p, t_p = self.get_powers()
-        print(s_p, r_p , u_p, u0_p, t_p)
+        print(s_p, r_p , u_p, u0_p, t_p, self.epsilon0)
         s = self.ui.sBox.value()
         e = self.ui.epsilonBox.value()
         r = self.ui.rBox.value()
