@@ -90,9 +90,19 @@ class mainUi(QMainWindow):
         t = self.ui.timpBox.value()
         d = (u*u_p)/(t*t_p)*(r*r_p * e*self.epsilon0 * s * s_p)/(u0 * u0_p)
         print("D", d)
-        txt = "D in μm : "+str(d)
+        micro = self.get_micrometers(d)
+        txt = "D = "+str(micro)+"  μm"
         self.ui.answer_label.setText(txt)
         self.save_config()
+        pass
+
+    def get_micrometers(self, d):
+        _t = str(d)
+        base, exp = _t.split('e')
+        _b = float(base)
+        _e = float(exp)
+        mod = _e + 6.0
+        return round((_b * pow(10.0, mod)), 2)
         pass
 
     def get_powers(self):
