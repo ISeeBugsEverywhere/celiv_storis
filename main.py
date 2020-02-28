@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+#-*- coding: utf-8 -*-
+
 import sys, os
 from PyQt5.QtWidgets import *
 from GUI.UI import Ui_MainWindow
