@@ -98,7 +98,12 @@ class mainUi(QMainWindow):
 
     def get_micrometers(self, d):
         _t = str(d)
-        base, exp = _t.split('e')
+        base, exp = 1.0 , 1.0
+        try:
+            base, exp = _t.split('e')
+        except:
+            base = _t
+            exp = 0.0
         _b = float(base)
         _e = float(exp)
         mod = _e + 6.0
