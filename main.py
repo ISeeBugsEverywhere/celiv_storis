@@ -3,6 +3,7 @@
 
 import sys, os
 from PyQt5.QtWidgets import *
+from PyQt5 import QtCore
 from GUI.UI import Ui_MainWindow
 import configparser
 
@@ -20,6 +21,8 @@ class mainUi(QMainWindow):
         self.ui.calculate_btn.clicked.connect(self.calculate_fn)
         self.epsilon0 = 1
         self.load_config()
+        flags = QtCore.Qt.WindowFlags(QtCore.Qt.FramelessWindowHint | QtCore.Qt.WindowStaysOnTopHint|QtCore.Qt.Tool)
+        self.setWindowFlags(flags)
 
 
     def load_config(self):
