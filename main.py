@@ -21,6 +21,9 @@ class mainUi(QMainWindow):
         self.ui.calculate_btn.clicked.connect(self.calculate_fn)
         self.epsilon0 = 1
         self.load_config()
+        self.menu = QMenu()
+        self.menu.addAction("Change Tool")
+        
         flags = QtCore.Qt.WindowFlags(QtCore.Qt.FramelessWindowHint | QtCore.Qt.WindowStaysOnTopHint|QtCore.Qt.Tool)
         self.setWindowFlags(flags)
 
