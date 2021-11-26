@@ -23,8 +23,8 @@ class mainUi(QMainWindow):
         self.load_config()
         # flags = QtCore.Qt.WindowFlags(QtCore.Qt.FramelessWindowHint | QtCore.Qt.WindowStaysOnTopHint|QtCore.Qt.Tool)
         # self.setWindowFlags(flags)
-        icon = QtGui.QIcon("GUI/calc.png")
-        self.setWindowIcon(icon)
+        icons = QtGui.QIcon("GUI/calc.png")
+        self.setWindowIcon(icons)
 
 
     def load_config(self):
