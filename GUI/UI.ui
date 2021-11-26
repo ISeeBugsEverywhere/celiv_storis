@@ -45,6 +45,9 @@
       <property name="locale">
        <locale language="C" country="AnyCountry"/>
       </property>
+      <property name="maximum">
+       <double>1000000.000000000000000</double>
+      </property>
      </widget>
     </item>
     <item row="0" column="2" colspan="2">
@@ -70,7 +73,7 @@
     <item row="1" column="0">
      <widget class="QLabel" name="label_2">
       <property name="text">
-       <string>Dielektrinė knstanta, ε</string>
+       <string>Dielektrinė konstanta, ε</string>
       </property>
      </widget>
     </item>
@@ -84,6 +87,9 @@
       </property>
       <property name="locale">
        <locale language="C" country="AnyCountry"/>
+      </property>
+      <property name="maximum">
+       <double>1000000.000000000000000</double>
       </property>
      </widget>
     </item>
@@ -104,6 +110,9 @@
       </property>
       <property name="locale">
        <locale language="C" country="AnyCountry"/>
+      </property>
+      <property name="maximum">
+       <double>1000000.000000000000000</double>
       </property>
      </widget>
     </item>
@@ -150,6 +159,9 @@
       <property name="locale">
        <locale language="C" country="AnyCountry"/>
       </property>
+      <property name="maximum">
+       <double>1000000.000000000000000</double>
+      </property>
      </widget>
     </item>
     <item row="3" column="2" colspan="2">
@@ -189,6 +201,9 @@
       </property>
       <property name="locale">
        <locale language="C" country="AnyCountry"/>
+      </property>
+      <property name="maximum">
+       <double>1000000.000000000000000</double>
       </property>
      </widget>
     </item>
@@ -235,6 +250,9 @@
       </property>
       <property name="locale">
        <locale language="C" country="AnyCountry"/>
+      </property>
+      <property name="maximum">
+       <double>1000000.000000000000000</double>
       </property>
      </widget>
     </item>
@@ -326,7 +344,7 @@
      <x>0</x>
      <y>0</y>
      <width>380</width>
-     <height>28</height>
+     <height>27</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFailas">
